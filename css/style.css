@@ -3,7 +3,17 @@ body{
     padding: 0;
     background: url(../images/agnieszka-m--bR9NjCy0FE-unsplash.jpg) no-repeat;
     background-size: cover;
+    background-attachment: fixed;
 }
+
+
+/*my face image */
+.box-img{
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+}
+/* header box*/
 .box{
     width: 450px;
     background: rgba(0, 0, 0, 0.4);
@@ -14,11 +24,7 @@ body{
     color: white;
     font-family: 'Century Gothic',sans-serif;
 }
-.box-img{
-    border-radius: 50%;
-    width: 200px;
-    height: 200px;
-}
+
 .box h1{
     font-size: 40px;
     letter-spacing: 4px;
@@ -32,6 +38,23 @@ body{
 .box p{
     text-align: center;
 }
+
+.box li{
+    display: inline-block;
+    margin: 6px;
+    list-style: none;
+}
+.box li a{
+    color: white;
+    text-decoration: none;
+    font-size: 60px;
+    transition: all ease-in-out 250ms;
+}
+.box li a:hover{
+    color: #b9b9b9;
+}
+
+/*horizontal white boxes*/
 
 .box-white{
     color: #777;
@@ -55,20 +78,6 @@ ul{
     margin: 0;
     padding: 0;
 }
-.box li{
-    display: inline-block;
-    margin: 6px;
-    list-style: none;
-}
-.box li a{
-    color: white;
-    text-decoration: none;
-    font-size: 60px;
-    transition: all ease-in-out 250ms;
-}
-.box li a:hover{
-    color: #b9b9b9;
-}
 
 /*icons*/
 .icon h1{
@@ -88,5 +97,23 @@ ul{
 }
 .icon li a:hover{
     color: #b9b9b9;
+}
+.section-title {
+    left: 0;
+    top: 100%;
+    width: 100%;
+    text-align: center;
+    color: #000;
+    min-height: 120px;
+}
+
+.section-title span.border {
+    background-color: #111;
+    color: #fff;
+    padding: 18px;
+    font-size: 25px;
+    letter-spacing: 10px;
+    position: center;
+    align-content: baseline;
 }
 
