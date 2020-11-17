@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/queries.css">
+<!--    <link rel="stylesheet" href="css/queries.css">-->
+    <link rel="stylesheet" href="css/navstyle.css">
     <link rel="icon" href="images/favicon.ico">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://use.fontawesome.com/d1341f9b7a.js"></script>
@@ -14,15 +15,27 @@
 </head>
 <body>
 
-    <div class="topnav" id="myTopnav">
-        <a href="#home" class="active">Home</a>
-        <a href="#news">News</a>
-        <a href="#contact">Contact</a>
-        <a href="#about">About</a>
-        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-            <i class="fa fa-bars"></i>
-        </a>
-    </div>
+    <nav class="nav">
+        <div class="container">
+            <div class="logo">
+                <a href="#home"><img src="images/logo3.png" alt="" class="logo-img" style="background: #4CAF50"></a>
+            </div>
+            <div id="mainListDiv" class="main_list">
+                <ul class="navlinks">
+                    <li><a href="#about">About Me</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#resume">Resume</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <span class="navTrigger">
+                    <i></i>
+                    <i></i>
+                    <i></i>
+                </span>
+        </div>
+    </nav>
+    <section id="home"></section>
     <div class="box">
         <img src="images/me.jpg" alt="" class="box-img">
         <h1>
@@ -31,19 +44,26 @@
             Software Engineer</h5>
         <ul>
             <li><a href="https://github.com/aiporre"><i class="fa fa-github-square" aria-hidden="true"></i></a></li>
+            <li><a href="https://twitter.com/LuftMir"><i class="fa fa-twitter-square" aria-hidden="true"></i></a></li>
         </ul>
     </div>
-    <div class="box-white">
-        <h3 style="text-align:center;">ABOUT ME</h3>
-        <p>I am a research assistant at <a href="http://www.ana.uni-heidelberg.de/index.php?id=ag-kuner"> Functional Neuroanatomy Group</a>. I have experience in machine learning, embedded development, and web applications. Currently, I am working in video analysis and machine learning for neuroscience.</p>
+    <div id="about" class="section-title">
     </div>
+    <div class="box-white">
+        <h3>ABOUT ME</h3>
+        <p>I am a research assistant at <a href="http://www.ana.uni-heidelberg.de/index.php?id=ag-kuner"> Functional Neuroanatomy Group</a>. I have experience in machine learning, embedded systems, and web applications. Currently, I am working in video analysis and machine learning for neuroscience.</p>
+    </div>
+
+    <div id="projects" class="section-title">
+    </div>
+
     <div class="section-title">
         <span class="border">PROJECTS</span>
     </div>
     <div class="box-white">
         <h3 style="text-align:center;"> Microservices in medicine: Image and diagnosis retrieval example</h3>
         <div style="text-align:center;">
-            <img src="images/james-wainscoat-b7MZ6iGIoSI-unsplash.jpg" alt="" class="box-img">
+            <img src="images/james-wainscoat-b7MZ6iGIoSI-unsplash.jpg" alt="" class="box-img-small">
         </div>
         <div class="icon">
             <a href="https://github.com/aiporre/microservices_example"><i class="fa fa-code"> code</i></a>
@@ -53,18 +73,91 @@
     <div class="section-title">
     </div>
     <div class="box-white">
-        <h3 style="text-align:center;">Dapipe: Data Pipeline Library</h3>
-        <div style="text-align:center;"><img src="images/pipeguy.png" alt="" class="box-img"></div>
+        <h3 class="bwH2">Dapipe: Data Pipeline Library</h3>
+        <div style="text-align:center;"><img src="images/pipeguy.png" alt="" class="box-img-small"></div>
 
         <div class="icon">
             <a href="https://github.com/aiporre/multidataloader"><i class="fa fa-code"> code</i></a>
         </div>
-        <p>Create ready to use Tensorflow datasets with parallelization from functions and classes. It can also use predefined loaders, which read directly from folders.</p>
+        <p class="bwP">Create ready to use Tensorflow datasets with parallelization from functions and classes. It can also use predefined loaders, which read directly from folders.</p>
+    </div>
+    <div id="resume" class="section-title">
+    </div>
+
+    <div  class="section-title">
+        <span class="border">RESUME</span>
+    </div>
+    <div class="box-white">
+<!--        <div style="text-align:justify-all;">-->
+<!--            <img src="images/james-wainscoat-b7MZ6iGIoSI-unsplash.jpg" alt="" class="logo-img">-->
+<!--            <img src="images/james-wainscoat-b7MZ6iGIoSI-unsplash.jpg" alt="" class="logo-img">-->
+<!--            <img src="images/james-wainscoat-b7MZ6iGIoSI-unsplash.jpg" alt="" class="logo-img">-->
+<!--        </div>-->
+        <div id="flex">
+            <div><img src="images/logo.png" alt="" class="logo-img"> <a href="resources/cv_long_en.pdf">Long CV (English)</a> </div>
+            <div><img src="images/logo.png" alt="" class="logo-img"> <a href="resources/cv_long_deu.pdf">Long CV (German)</a> </div>
+<!--            <div><img src="images/james-wainscoat-b7MZ6iGIoSI-unsplash.jpg" alt="" class="logo-img"></div>-->
+<!--            <div><img src="images/james-wainscoat-b7MZ6iGIoSI-unsplash.jpg" alt="" class="logo-img"></div>-->
+        </div>
+        <div class="icon">
+            <i class="fa fa-code"> Education</i>
+        </div>
+        <div class="text-box">
+            <p>(2019) M.Sc. Biomedical Engineering (Computational Medical Physics)</p>
+            <p>(2014) B.Sc Electronic Engineering (Control Systems)</p>
+        </div>
+        <div class="icon">
+            <i class="fa fa-code"> Experience</i>
+        </div>
+        <div class="text-box">
+            <p>(2018-today) Software Developer Research Assistant, Funtional Neuroanatomy - Heidelberg University</p>
+            <p>(2016-2017) Software Developer, Mojix</p>
+            <p>(2015-2016) Academic Manager, STEM Robotics Center - Unidad Educativa Colibrí</p>
+            <p>(2014-2015) Researcher/ Hardware Engineer, Chemical Research Institute-UMSA</p>
+        </div>
+
+
+    </div>
+    <div id="contact" class="section-title">
     </div>
     <div class="section-title">
+        <span class="border">CONTACT</span>
+    </div>
+    <div class="box-white">
+
+        <h3 style="text-align:center;"> Write me a message</h3>
+        <div style="text-align:center;">
+            <img src="images/logo3.png" alt="" class="logo-img">
+        </div>
+        <div class="text-box send-email">
+        <form action="mailto:ariel.iporre.rivas@gmail.com" method="GET">
+            <label for="subject">Subject</label>
+            <input id="subject" name="subject" type="text" placeholder="Your subject.."/>
+            <label for="body">Message</label>
+            <textarea id="body" name="body" placeholder="Write here.."></textarea>
+            <input type="submit" value="Send" />
+        </form>
+        </div>
+
+        <!--        <div class="icon">-->
+<!--            <a href="https://github.com/aiporre/microservices_example"><i class="fa fa-code"> code</i></a>-->
+<!--        </div>-->
+<!--        <p>Medical Information management must fulfill strict specifications of data protection. Microservices implement security checks repeatedly for every service.  Besides, the modularity, intrinsic in microservices, adapts to the business model of medical centers.</p>-->
     </div>
 
 <!--    Javascripts-->
-    <script src="/javascript/app.js"></script>
+<!--    <script type="text/javascript" src="javascript/app.js"></script>-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="javascript/app.js"></script>
+<script>
+    $(window).scroll(function() {
+        if ($(document).scrollTop() > 50) {
+            $('.nav').addClass('affix');
+            console.log("OK");
+        } else {
+            $('.nav').removeClass('affix');
+        }
+    });
+</script>
 </body>
 </html>

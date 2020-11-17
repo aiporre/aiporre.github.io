@@ -1,6 +1,6 @@
 /* Toggle between adding and removing the "responsive"
 class to topnav when the user clicks on the icon */
-function myFunction() {
+function arrangeTopNav() {
     console.log(' calling my function!! ')
     var x = document.getElementById("myTopnav");
     if (x.className === "topnav") {
@@ -9,3 +9,14 @@ function myFunction() {
         x.className = "topnav";
     }
 }
+
+
+$('.navTrigger').click(function () {
+    $(this).toggleClass('active');
+    console.log("Clicked menu");
+    $("#mainListDiv").toggleClass("show_list");
+    $("#mainListDiv").fadeIn();
+
+});
+
+
