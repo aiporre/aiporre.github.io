@@ -42,7 +42,7 @@ body {
     height: 100vh;
     background-position: center top;
     background-size:cover;
-    width: 450px;
+    /*width: 100vh;*/
     background: rgba(0, 0, 0, 0.0);
     padding: 40px;
     text-align: center;
@@ -106,25 +106,21 @@ body {
 }
 .box-white p {
     text-align: center;
-    padding-left:15%;
-    padding-right:15%;
     font-size: 16px;
 }
 
 .box-white .text-box {
     background-position: center top;
     background-size:cover;
-    width: 1000px;
-    /*background: rgba(0, 0, 0, 0.1);*/
+    width: 100%;
     padding: 40px;
     text-align: center;
     margin: auto;
-    /*font-family: 'Century Gothic',sans-serif;*/
 }
-.box-white p {
+.box-white .text-box p {
     text-align: left;
-    padding-left:15%;
-    padding-right:15%;
+    padding-left:25%;
+    padding-right:25%;
     font-size: 16px;
 }
 
@@ -147,6 +143,45 @@ body {
 }
 .box-white div:nth-child(n + 3) {
     order: 2;
+}
+
+.box-white .tg{
+    padding-left:15%;
+    padding-right:15%;}
+
+.box-white .tg th{
+    border-top-color: black;
+    border-top-style: solid;
+    border-top-width: 1px;
+}
+
+.box-white .tg td {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    overflow: hidden;
+    /*padding: 10px 5px;*/
+    word-break: normal;
+}
+
+.box-white .tg th {
+    /*border-color: black;*/
+    /*border-style: solid;*/
+    /*border-width: 1px;*/
+    font-size: 14px;
+    font-weight: normal;
+    overflow: hidden;
+    /*padding: 10px 5px;*/
+    word-break: normal;
+}
+
+.box-white .tg .tg-0lax {
+    text-align: left;
+    vertical-align: top
+}
+.box-white .tg .tg-0lax p{
+    text-align: left;
+    vertical-align: top;
+    font-weight: normal;
 }
 
 ul{
@@ -196,9 +231,13 @@ ul{
     align-content: baseline;
 }
 
+.send-email{
+    background-color: #f2f2f2;
+}
 /* Form style*/
 .send-email form{
     font-size: 16px;
+
 }
 .send-email input[type=text], select {
     width: 100%;
@@ -233,13 +272,46 @@ ul{
     resize: none;
 }
 
+/*.send-email label {*/
+/*    padding: 12px 12px 12px 0;*/
+/*    display: inline-block;*/
+/*}*/
+
+
 .send-email input[type=submit]:hover {
     background-color: #45a049;
 }
 
 .send-email div {
     border-radius: 5px;
-    background-color: #f2f2f2;
     padding: 20px;
 }
 
+
+.send-email .col-25 {
+    /*float: left;*/
+    /*width: 25%;*/
+    /*margin-top: 6px;*/
+}
+
+.send-email .col-75 {
+    /*float: left;*/
+    /*width: 75%;*/
+    /*margin-top: 6px;*/
+}
+
+/*!* Clear floats after the columns *!*/
+/*.send-email .row:after {*/
+/*    content: "";*/
+/*    display: table;*/
+/*    clear: both;*/
+/*}*/
+
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+    .send-email .col-25, .send-email .col-75, .send-email input[type=submit] {
+        width: 100%;
+        margin-top: 0;
+    }
+}
