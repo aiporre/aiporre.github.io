@@ -102,11 +102,21 @@
 }
 
 @media screen and (max-width:768px) {
+    .nav {
+        height: 60px;
+        line-height: 60px;
+        padding-top: 8px;
+        padding-bottom: 8px;
+        background: rgba(0, 0, 0, 0.55);
+        backdrop-filter: blur(2px);
+    }
+
     .navTrigger {
         display: block;
     }
     .nav div.logo {
-        margin-left: 15px;
+        margin-left: 8px;
+        padding-left: 1.6rem;
     }
     .nav div.main_list {
         width: 100%;
@@ -120,26 +130,43 @@
     .nav div.main_list ul {
         flex-direction: column;
         width: 100%;
-        height: 100vh;
+        height: calc(100vh - 60px);
         right: 0;
         left: 0;
         bottom: 0;
         background-color: #111;
         /*same background color of navbar*/
         background-position: center top;
+        justify-content: flex-start;
+        padding-top: 18px;
     }
     .nav div.main_list ul li {
         width: 100%;
-        text-align: right;
+        height: auto;
+        text-align: center;
+        padding-right: 0;
     }
     .nav div.main_list ul li a {
         text-align: center;
         width: 100%;
-        font-size: 3rem;
-        padding: 20px;
+        font-size: 2.2rem;
+        line-height: 1.4;
+        padding: 16px 20px;
+        display: block;
     }
     .nav div.media_button {
         display: block;
+    }
+}
+
+@media screen and (max-width:420px) {
+    .nav div.logo {
+        padding-left: 1rem;
+    }
+
+    .nav div.main_list ul li a {
+        font-size: 2rem;
+        padding: 14px 16px;
     }
 }
 
