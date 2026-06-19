@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "If you use this profile repository or related research resources, please cite as follows."
+title: "aiporre.github.io profile and research portfolio"
+type: software
+authors:
+  - family-names: "Iporre-Rivas"
+    given-names: "Ariel"
+    affiliation: "Heidelberg University (or current institution)"
+repository-code: "https://github.com/aiporre/aiporre.github.io"
+url: "https://aiporre.github.io/"
+license: "MIT"
+keywords:
+  - geometric deep learning
+  - shape analysis
+  - manifold neural networks
+  - brain connectivity
+  - biomedical AI
