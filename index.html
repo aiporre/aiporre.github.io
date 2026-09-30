@@ -2,180 +2,374 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/navstyle.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>Ariel Iporre-Rivas</title>
+    <meta name="description" content="Ariel Iporre-Rivas — PhD researcher in geometric deep learning for neuroimaging at the Max Planck Institute for Human Cognitive and Brain Sciences and Leipzig University.">
+    <meta name="author" content="Ariel Iporre-Rivas">
+    <meta property="og:title" content="Ariel Iporre-Rivas">
+    <meta property="og:description" content="Geometric deep learning for brain shape, stroke and neurodegeneration.">
+    <meta property="og:image" content="https://aiporre.github.io/images/me.jpg">
+    <meta property="og:type" content="profile">
     <link rel="icon" href="images/logo.png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="https://use.fontawesome.com/d1341f9b7a.js"></script>
 
-    <title>Ariel Iporre</title>
+    <script>
+        // Apply saved theme before paint to avoid a flash.
+        try {
+            var t = localStorage.getItem("theme");
+            if (t) document.documentElement.setAttribute("data-theme", t);
+        } catch (e) {}
+    </script>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Newsreader:opsz,wght@6..72,500;6..72,600&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
 
-    <nav class="nav">
-        <div class="container">
-            <div class="logo">
-                <a href="#home"><img src="images/logo3.png" alt="" class="logo-img" style="background: #4CAF50"></a>
-            </div>
-            <div id="mainListDiv" class="main_list">
-                <ul class="navlinks">
-                    <li><a href="#about">About Me</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#resume">Resume</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </div>
-            <span class="navTrigger">
-                    <i></i>
-                    <i></i>
-                    <i></i>
-                </span>
+<header class="topbar" id="topbar">
+    <div class="topbar-inner">
+        <a class="brand" href="#top">Ariel Iporre-Rivas<span>.</span></a>
+        <nav class="nav" aria-label="Sections">
+            <a href="#about">About</a>
+            <a href="#news">News</a>
+            <a href="#research">Research</a>
+            <a href="#publications">Publications</a>
+            <a href="#experience">Experience</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </nav>
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+            <i class="fa-solid fa-moon"></i><i class="fa-solid fa-sun"></i>
+        </button>
+    </div>
+</header>
+
+<div class="layout" id="top">
+
+    <!-- ================= SIDEBAR ================= -->
+    <aside class="profile">
+        <div class="avatar-wrap">
+            <img class="avatar" src="images/me.jpg" alt="Portrait of Ariel Iporre-Rivas">
         </div>
-    </nav>
-    <section id="home"></section>
-    <div class="box">
-        <img src="images/me.jpg" alt="" class="box-img">
-        <h1>
-            Ariel Iporre-Rivas</h1>
-        <h5>
-            Software Engineer</h5>
-        <ul>
-            <li><a href="https://github.com/aiporre"><i class="fa fa-github-square" aria-hidden="true"></i></a></li>
-            <li><a href="https://twitter.com/LuftMir"><i class="fa fa-twitter-square" aria-hidden="true"></i></a></li>
+        <h1>Ariel Iporre&#8209;Rivas</h1>
+        <p class="role">PhD Researcher &middot; Geometric Deep Learning</p>
+        <p class="affil">Max Planck Institute for Human Cognitive and Brain Sciences &amp; Leipzig University</p>
+        <div><span class="status"><span class="dot"></span>Open to postdoc opportunities</span></div>
+        <ul class="links">
+            <li><a href="https://scholar.google.com/citations?user=X23y5mYAAAAJ&amp;hl=en"><i class="fa-solid fa-graduation-cap"></i>Google Scholar</a></li>
+            <li><a href="https://github.com/aiporre"><i class="fa-brands fa-github"></i>github.com/aiporre</a></li>
+            <li><a href="#contact"><i class="fa-solid fa-envelope"></i>rivas@cbs.mpg.de</a></li>
+            <li><a href="https://twitter.com/LuftMir"><i class="fa-brands fa-x-twitter"></i>@LuftMir</a></li>
+            <li><a href="https://www.google.com/maps/place/Leipzig"><i class="fa-solid fa-location-dot"></i>Leipzig, Germany</a></li>
         </ul>
-    </div>
-    <div id="about" class="section-title">
-    </div>
-    <div class="box-white">
-        <h3>ABOUT ME</h3>
-        <p>I am a research assistant at <a href="http://www.ana.uni-heidelberg.de/index.php?id=ag-kuner"> Functional Neuroanatomy Group</a>. I have experience in machine learning, embedded systems, and web applications. Currently, I am working in video analysis and machine learning for neuroscience.</p>
-    </div>
+        <div class="btn-row">
+            <a class="btn" href="resources/cv_long_en.pdf"><i class="fa-solid fa-file-arrow-down"></i>CV (EN)</a>
+            <a class="btn ghost" href="resources/cv_long_deu.pdf">Lebenslauf (DE)</a>
+        </div>
+    </aside>
 
-    <div id="projects" class="section-title">
-    </div>
+    <!-- ================= MAIN ================= -->
+    <main>
 
-    <div class="section-title">
-        <span class="border">PROJECTS</span>
-    </div>
-    <div class="box-white">
-        <h3 style="text-align:center;"> Microservices in medicine: Image and diagnosis retrieval example</h3>
-        <div style="text-align:center;">
-            <img src="images/james-wainscoat-b7MZ6iGIoSI-unsplash.jpg" alt="" class="box-img-small">
-        </div>
-        <div class="icon">
-            <a href="https://github.com/aiporre/microservices_example"><i class="fa fa-code"> code</i></a>
-        </div>
-        <p>Medical Information management must fulfill strict specifications of data protection. Microservices implement security checks repeatedly for every service.  Besides, the modularity, intrinsic in microservices, adapts to the business model of medical centers.</p>
-    </div>
-    <div class="section-title">
-    </div>
-    <div class="box-white">
-        <h3 class="bwH2">Dapipe: Data Pipeline Library</h3>
-        <div style="text-align:center;"><img src="images/pipeguy.png" alt="" class="box-img-small"></div>
+        <section id="about" class="reveal">
+            <p class="lead">I build <mark>geometric deep learning</mark> methods that learn directly on brain surfaces, meshes and manifolds &mdash; to understand how neuroanatomy changes in stroke, ageing and neurodegeneration.</p>
+            <div class="prose">
+                <p>I am a PhD researcher at the <a href="https://www.cbs.mpg.de/">Max Planck Institute for Human Cognitive and Brain Sciences</a> and the <strong>Signal and Image Processing Group</strong>, Institut f&uuml;r Informatik, <a href="https://www.uni-leipzig.de/">Leipzig University</a>. My work sits at the intersection of differential geometry, machine learning and neuroscience.</p>
+                <p>Currently I am developing <strong>pmConv</strong>, a convolution operator for signals on genus-zero manifolds that uses conformal spherical parametrization while compensating for geometric distortion, and studying <strong>hippocampal shape</strong> in healthy ageing, MCI and Alzheimer's disease with normative models of learned shape representations.</p>
+                <p>Before the PhD I studied Biomedical Engineering in Heidelberg and Electronic Engineering in La Paz, and worked across industry and academia as a software engineer, research assistant and image analyst.</p>
+            </div>
+            <div class="tags">
+                <span class="tag">Geometric Deep Learning</span>
+                <span class="tag">Graph Neural Networks</span>
+                <span class="tag">Shape Analysis</span>
+                <span class="tag">Neuroimaging</span>
+                <span class="tag">Equivariance</span>
+                <span class="tag">Normative Modeling</span>
+                <span class="tag">Information Geometry</span>
+            </div>
+        </section>
 
-        <div class="icon">
-            <a href="https://github.com/aiporre/multidataloader"><i class="fa fa-code"> code</i></a>
-        </div>
-        <p class="bwP">Create ready to use Tensorflow datasets with parallelization from functions and classes. It can also use predefined loaders, which read directly from folders.</p>
-    </div>
-    <div id="resume" class="section-title">
-    </div>
+        <section id="news" class="reveal">
+            <div class="section-head"><span class="num">01</span><h2>News</h2></div>
+            <ul class="news">
+                <li><time datetime="2026-05-30">30 May 2026</time><div>Our paper <em>Benchmarking Geometric Deep Learning for Hippocampal Shape Analysis</em> was accepted at <strong>ECML PKDD 2026</strong> (Research Track).<span class="badge-new">New</span></div></li>
+                <li><time>2023</time><div><em>Stroke-GFCN</em>, a fully convolutional graph network for ischemic stroke lesion prediction, published in the <strong>Journal of Medical Imaging</strong>.</div></li>
+                <li><time>2023</time><div>Joined <strong>Resolve Biosciences</strong> as image analyst (Oct 2023 &ndash; Apr 2024), building GPU-accelerated microscopy pipelines.</div></li>
+                <li><time>2022</time><div><em>Understanding Graph Convolutional Networks to detect Brain Lesions from Stroke</em> published at <strong>VCBM 2022</strong>.</div></li>
+                <li><time>2021</time><div>Started my PhD at the <strong>MPI CBS</strong> and <strong>Leipzig University</strong>.</div></li>
+            </ul>
+        </section>
 
-    <div  class="section-title">
-        <span class="border">RESUME</span>
-    </div>
-    <div class="box-white">
-        <div id="flex">
-            <div><img src="images/logo.png" alt="" class="logo-img"> <a href="resources/cv_long_en.pdf">Long CV (English)</a> </div>
-            <div><img src="images/logo.png" alt="" class="logo-img"> <a href="resources/cv_long_deu.pdf">Long CV (German)</a> </div>
-        </div>
-        <div class="icon">
-            <i class="fa fa-code"> </i> Education
-        </div>
-        <div class="text-box">
-            <p>(2019) M.Sc. Biomedical Engineering (Computational Medical Physics)</p>
-            <p>(2014) B.Sc Electronic Engineering (Control Systems)</p>
-        </div>
-        <div class="icon">
-            <i class="fa fa-code"> </i> Experience
-        </div>
-        <div class="text-box">
-            <p>(2018-today) Software Developer Research Assistant, Funtional Neuroanatomy - Heidelberg University</p>
-            <p>(2016-2017) Software Developer, Mojix</p>
-            <p>(2015-2016) Academic Manager, STEM Robotics Center - Unidad Educativa Colibrí</p>
-            <p>(2014-2015) Researcher/ Hardware Engineer, Chemical Research Institute-UMSA</p>
-        </div>
+        <section id="research" class="reveal">
+            <div class="section-head"><span class="num">02</span><h2>Research</h2></div>
+            <div class="cards">
+                <article class="card">
+                    <span class="pill">Ongoing</span>
+                    <div class="ic"><i class="fa-solid fa-globe"></i></div>
+                    <h3>Parametrized manifold convolution</h3>
+                    <p>pmConv: convolution on genus-zero surfaces via conformal spherical parametrization, with distortion-aware kernels and controlled tests of rotation and gauge equivariance.</p>
+                </article>
+                <article class="card">
+                    <div class="ic"><i class="fa-solid fa-brain"></i></div>
+                    <h3>Hippocampal shape analysis</h3>
+                    <p>Rigorous benchmarks of mesh, graph and point-cloud architectures for hippocampal shape in ageing, MCI and Alzheimer's disease (ADNI).</p>
+                </article>
+                <article class="card">
+                    <div class="ic"><i class="fa-solid fa-chart-area"></i></div>
+                    <h3>Normative modeling</h3>
+                    <p>Individual-level deviation scores in learned shape spaces using Bayesian regression and the information geometry of representation distributions.</p>
+                </article>
+                <article class="card">
+                    <div class="ic"><i class="fa-solid fa-diagram-project"></i></div>
+                    <h3>Graph networks for stroke</h3>
+                    <p>Fully convolutional graph networks that predict ischemic stroke lesions and make GCN decisions interpretable.</p>
+                </article>
+            </div>
+        </section>
 
-        <div>
-            <table class="tg">
-                <thead>
-                <tr>
-                    <th class="tg-0lax" style="text-align: center">
-                        <img src="images/th_images/segmentation_p21.gif" width="300" height="200">
-                    </th>
-                    <th class="tg-0lax">
-                            <p style="font-weight: bold">Master Thesis</p>
-                            <p> Geometric Deep Learning methods for segmentation of medical images. </p>
-                            <p> Heidelberg University, 2019</p>.
-                            <p> [<a href="#">Thesis</a>] [<a href="https://github.com/aiporre/gcn_segmentation">Code</a>] </p>
-                    </th>
-                </tr>
-                <tr>
-                    <th class="tg-0lax" style="text-align: center">
-                        <img src="https://github.com/aiporre/paperINS/blob/master/images/algo.png?raw=true" width="300" height="300">
-                    </th>
-                    <th class="tg-0lax">
-                        <p style="font-weight: bold">Bachelor Thesis</p>
-                        <p> Experimental evaluation of the reconstruction of rotations on quaternions using an Optimal Observer for a navigation algorithm based on SO(3) complementary observers.</p>
-                        <p>Universidad Mayor de San Andres, 2014</p>.
-                        <p> [<a href="https://github.com/aiporre/paperINS/blob/master/Rotation_Matrix_Reconstruction_in_Quaternions_with_an_Optimal_Observer_within_a_Navigation_Algorithm_Based_on_Nonlinear_Complementary_Observers.pdf">Paper</a>]</th>
-                </tr>
-                </thead>
-            </table>
-        </div>
-    </div>
-    <div id="contact" class="section-title">
-    </div>
-    <div class="section-title">
-        <span class="border">CONTACT</span>
-    </div>
-    <div class="box-white">
-        <h3 style="text-align:center;"> Write me a message</h3>
-        <div style="text-align:center;">
-            <img src="images/logo3.png" alt="" class="logo-img">
-        </div>
-        <div class="send-email">
-            <form action="mailto:ariel.iporre.rivas@gmail.com" method="GET">
-                <div class="row">
-                    <div class="col-25"><label for="subject">Subject</label></div>
-                    <div class="col-75"><input id="subject" name="subject" type="text" placeholder="Your subject.."/></div>
+        <section id="publications" class="reveal">
+            <div class="section-head">
+                <span class="num">03</span><h2>Publications</h2>
+                <a class="more" href="https://scholar.google.com/citations?user=X23y5mYAAAAJ&amp;hl=en">Google Scholar &rarr;</a>
+            </div>
+            <article class="feature" id="hb" aria-label="Animated summary of the hippocampus benchmark paper">
+                <div class="feature-head"><span class="kicker">Featured &middot; ECML PKDD 2026</span></div>
+                <h3>Benchmarking Geometric Deep Learning for Hippocampal Shape Analysis</h3>
+                <div class="hb-stage"></div>
+                <div class="hb-controls">
+                    <div class="hb-steps" aria-label="Animation steps"></div>
+                    <button class="hb-play" type="button" aria-label="Pause animation" aria-pressed="false"><i class="fa-solid fa-pause"></i><i class="fa-solid fa-play"></i></button>
                 </div>
-                <div class="row">
-                    <div class="col-25"><label for="body">Message</label></div>
-                    <div class="col-75"><textarea id="body" name="body" placeholder="Write here.."></textarea></div>
+                <p class="hb-caption" aria-live="polite">A comparative study of 12 geometric deep learning models for hippocampal shape retrieval, classification and metric learning, with normative modeling to link learned shape embeddings to Alzheimer's biomarkers.</p>
+                <noscript><p class="hb-caption">A comparative study of 12 geometric deep learning models for hippocampal shape analysis on ADNI, with normative modeling linking learned embeddings to biomarkers.</p></noscript>
+                <div class="meta">
+                    <a href="https://github.com/aiporre/gdl-bsa"><i class="fa-brands fa-github"></i> Code</a>
+                    <a href="https://scholar.google.com/scholar?q=%22Benchmarking+Geometric+Deep+Learning+for+Hippocampal+Shape+Analysis%22">Scholar</a>
                 </div>
-                <div class="row">
-                    <input type="submit" value="Send" />
-                </div>
-            </form>
-        </div>
-    </div>
+            </article>
+            <div class="pub-filters" role="group" aria-label="Filter publications">
+                <button class="chip on" data-filter="all">All</button>
+                <button class="chip" data-filter="conference">Conference</button>
+                <button class="chip" data-filter="journal">Journal</button>
+                <button class="chip" data-filter="other">Other</button>
+            </div>
+            <div class="pubs">
+                <article class="pub" data-type="conference">
+                    <div class="year">2026</div>
+                    <div>
+                        <h3>Benchmarking Geometric Deep Learning for Hippocampal Shape Analysis</h3>
+                        <p class="authors"><span class="me">A. Iporre-Rivas</span>, N. Scherf, G. Scheuermann, C. Meinecke</p>
+                        <p class="venue">Machine Learning and Knowledge Discovery in Databases. Research Track</p>
+                        <div class="meta">
+                            <span class="venue-tag">ECML PKDD</span>
+                            <a href="https://scholar.google.com/scholar?q=%22Benchmarking+Geometric+Deep+Learning+for+Hippocampal+Shape+Analysis%22">Scholar</a>
+                            <a href="https://github.com/aiporre/gdl-bsa">Code</a>
+                        </div>
+                    </div>
+                </article>
+                <article class="pub" data-type="journal">
+                    <div class="year">2023</div>
+                    <div>
+                        <h3>Stroke-GFCN: ischemic stroke lesion prediction with a fully convolutional graph network</h3>
+                        <p class="authors"><span class="me">A. Iporre-Rivas</span>, D. Saur, K. Rohr, G. Scheuermann, C. Gillmann</p>
+                        <p class="venue">Journal of Medical Imaging</p>
+                        <div class="meta">
+                            <span class="venue-tag journal">JMI</span>
+                            <a href="https://scholar.google.com/scholar?q=%22Stroke-GFCN%22+ischemic+stroke+lesion+prediction">Scholar</a>
+                        </div>
+                    </div>
+                </article>
+                <article class="pub" data-type="conference">
+                    <div class="year">2022</div>
+                    <div>
+                        <h3>Understanding Graph Convolutional Networks to detect Brain Lesions from Stroke</h3>
+                        <p class="authors"><span class="me">A. Iporre-Rivas</span>, G. Scheuermann, C. Gillmann</p>
+                        <p class="venue">Eurographics Workshop on Visual Computing for Biology and Medicine</p>
+                        <div class="meta">
+                            <span class="venue-tag">VCBM</span>
+                            <a href="https://scholar.google.com/scholar?q=%22Understanding+Graph+Convolutional+Networks+to+detect+Brain+Lesions+from+Stroke%22">Scholar</a>
+                        </div>
+                    </div>
+                </article>
+                <article class="pub" data-type="other">
+                    <div class="year">2015</div>
+                    <div>
+                        <h3>Rotation Matrix Reconstruction in Quaternions with an Optimal Observer</h3>
+                        <p class="authors"><span class="me">A. Iporre-Rivas</span>, M. Am&eacute;stegui</p>
+                        <p class="venue">Universidad Mayor de San Andr&eacute;s</p>
+                        <div class="meta">
+                            <span class="venue-tag other">Report</span>
+                            <a href="https://github.com/aiporre/paperINS/blob/master/Rotation_Matrix_Reconstruction_in_Quaternions_with_an_Optimal_Observer_within_a_Navigation_Algorithm_Based_on_Nonlinear_Complementary_Observers.pdf">PDF</a>
+                            <a href="https://github.com/aiporre/paperINS">Code</a>
+                        </div>
+                    </div>
+                </article>
+                <article class="pub" data-type="conference">
+                    <div class="year">2013</div>
+                    <div>
+                        <h3>Modelo matem&aacute;tico de un robot m&oacute;vil diferencial</h3>
+                        <p class="authors"><span class="me">A. Iporre-Rivas</span></p>
+                        <p class="venue">5th Bolivian Engineering and Technology Congress</p>
+                        <div class="meta">
+                            <span class="venue-tag">BETCON</span>
+                            <a href="https://www.researchgate.net/publication/268523537_Modelo_matematico_de_un_robot_movil_diferencial">ResearchGate</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
 
-<!--    Javascripts-->
-<!--    <script type="text/javascript" src="javascript/app.js"></script>-->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<script src="javascript/app.js"></script>
-<script>
-    $(window).scroll(function() {
-        if ($(document).scrollTop() > 50) {
-            $('.nav').addClass('affix');
-            console.log("OK");
-        } else {
-            $('.nav').removeClass('affix');
-        }
-    });
-</script>
+        <section id="experience" class="reveal">
+            <div class="section-head"><span class="num">04</span><h2>Experience</h2></div>
+            <ol class="timeline">
+                <li class="current">
+                    <div class="tl-head"><h3>PhD Researcher</h3><time>2021 &ndash; now</time></div>
+                    <p class="tl-org">MPI for Human Cognitive and Brain Sciences &amp; Signal and Image Processing Group, Leipzig University</p>
+                    <p class="tl-desc">Geometric deep learning for brain image analysis in stroke and neurodegenerative diseases.</p>
+                </li>
+                <li>
+                    <div class="tl-head"><h3>Image Analyst</h3><time>2023 &ndash; 2024</time></div>
+                    <p class="tl-org">Resolve Biosciences &middot; Monheim am Rhein</p>
+                    <p class="tl-desc">Microscopy image-processing pipeline for peptide detection, data structures for ML in fluorescence microscopy, GPU acceleration.</p>
+                </li>
+                <li>
+                    <div class="tl-head"><h3>Software Developer / Research Assistant</h3><time>2018 &ndash; 2021</time></div>
+                    <p class="tl-org">Functional Neuroanatomy Group, Heidelberg University</p>
+                    <p class="tl-desc">Calcium microendoscopy pipelines and unsupervised deep learning for behavioral video analysis.</p>
+                </li>
+                <li>
+                    <div class="tl-head"><h3>Software Developer / Research Assistant</h3><time>2018 &ndash; 2019</time></div>
+                    <p class="tl-org">Data Analysis and Modeling in Medicine, Heidelberg University &middot; Mannheim</p>
+                    <p class="tl-desc">Gait-phase classification from video and inverse reconstruction of ultrasound signals.</p>
+                </li>
+                <li>
+                    <div class="tl-head"><h3>Software Engineer</h3><time>2016 &ndash; 2017</time></div>
+                    <p class="tl-org">Mojix &middot; La Paz</p>
+                    <p class="tl-desc">Big-data and IoT backends, a Spark-based BI API for retail analytics, RFID locator services.</p>
+                </li>
+                <li>
+                    <div class="tl-head"><h3>Academic Manager</h3><time>2015 &ndash; 2016</time></div>
+                    <p class="tl-org">Colibri STEM-Robotics Center &middot; Cobija</p>
+                    <p class="tl-desc">Designed a STEM robotics program in physics, mathematics and programming for children.</p>
+                </li>
+                <li>
+                    <div class="tl-head"><h3>Hardware Engineer / Researcher</h3><time>2014 &ndash; 2015</time></div>
+                    <p class="tl-org">Materials Science Group, Instituto de Investigaciones Qu&iacute;micas, UMSA</p>
+                    <p class="tl-desc">Embedded STM32 acquisition and battery management for lithium-ion photovoltaic systems.</p>
+                </li>
+            </ol>
+        </section>
+
+        <section id="education" class="reveal">
+            <div class="section-head"><span class="num">05</span><h2>Education &amp; Theses</h2></div>
+            <div class="two-col" style="margin-bottom:28px">
+                <ol class="timeline">
+                    <li class="current">
+                        <div class="tl-head"><h3>PhD, Computer Science</h3><time>2021 &ndash; now</time></div>
+                        <p class="tl-org">Leipzig University &amp; MPI CBS</p>
+                    </li>
+                    <li>
+                        <div class="tl-head"><h3>M.Sc. Biomedical Engineering</h3><time>2017 &ndash; 2019</time></div>
+                        <p class="tl-org">Heidelberg University &middot; grade 1.4</p>
+                    </li>
+                </ol>
+                <ol class="timeline">
+                    <li>
+                        <div class="tl-head"><h3>B.Sc. Electronic Engineering</h3><time>2006 &ndash; 2014</time></div>
+                        <p class="tl-org">Universidad Mayor de San Andr&eacute;s &middot; control systems</p>
+                    </li>
+                    <li>
+                        <div class="tl-head"><h3>Mathematics (undergraduate)</h3><time>2011 &ndash; 2013</time></div>
+                        <p class="tl-org">Universidad Mayor de San Andr&eacute;s</p>
+                    </li>
+                </ol>
+            </div>
+
+            <article class="thesis">
+                <img src="images/th_images/segmentation_p21.gif" alt="Lung vessel segmentation animation" loading="lazy">
+                <div>
+                    <p class="kicker">Master thesis &middot; 2019</p>
+                    <h3>Geometric deep learning methods for medical image segmentation</h3>
+                    <p>Lung vessel segmentation in CT with a geometric fully convolutional network exploiting the connected structure of vessels; state-of-the-art results on VESSEL12. Supervised by PD Dr. Karl Rohr.</p>
+                </div>
+            </article>
+            <article class="thesis">
+                <img src="https://github.com/aiporre/paperINS/blob/master/images/algo.png?raw=true" alt="Navigation algorithm diagram" loading="lazy">
+                <div>
+                    <p class="kicker">Bachelor thesis &middot; 2014</p>
+                    <h3>Rotation reconstruction with quaternions using an optimal observer on SO(3)</h3>
+                    <p>Replaced a sub-optimal rotation-matrix computation in a complementary-observer navigation algorithm with a quaternion optimal observer &mdash; 46% average accuracy gain. Graded with the maximum score.</p>
+                </div>
+            </article>
+        </section>
+
+        <section id="projects" class="reveal">
+            <div class="section-head">
+                <span class="num">06</span><h2>Open Source</h2>
+                <a class="more" href="https://github.com/aiporre">All repositories &rarr;</a>
+            </div>
+            <div class="cards">
+                <a class="proj" href="https://github.com/aiporre/gcn_segmentation">
+                    <div class="top"><i class="fa-regular fa-folder-open"></i><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
+                    <h3>gcn_segmentation</h3>
+                    <p>Graph fully convolutional networks for medical image segmentation (master thesis code).</p>
+                    <span class="lang">Python</span>
+                </a>
+                <a class="proj" href="https://github.com/aiporre/multidataloader">
+                    <div class="top"><i class="fa-regular fa-folder-open"></i><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
+                    <h3>dapipe</h3>
+                    <p>Ready-to-use, parallelized TensorFlow datasets from functions, classes and folder loaders.</p>
+                    <span class="lang">Python</span>
+                </a>
+                <a class="proj" href="https://github.com/aiporre/microservices_example">
+                    <div class="top"><i class="fa-regular fa-folder-open"></i><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
+                    <h3>Microservices in medicine</h3>
+                    <p>Image and diagnosis retrieval with per-service security checks for medical data.</p>
+                    <span class="lang">Python</span>
+                </a>
+            </div>
+        </section>
+
+        <section id="more" class="reveal">
+            <div class="section-head"><span class="num">07</span><h2>Awards, Talks &amp; Skills</h2></div>
+            <div class="two-col">
+                <ul class="plain">
+                    <li><time>2015</time><div>Senatorial Declaration, Chamber of Senators of Bolivia<span class="sub">NASA International Space Apps Challenge &mdash; &ldquo;Sensor your Swarm&rdquo;</span></div></li>
+                    <li><time>2015</time><div>Resolution of the University Council, UMSA<span class="sub">Recognition for the Space Apps Challenge</span></div></li>
+                    <li><time>2015</time><div>Tech talk: <a href="https://open.nasa.gov/innovation-space/sensor-your-swarm/">Sensor your Swarm</a><span class="sub">International Engineering and Science Congress, La Paz</span></div></li>
+                    <li><time>2014</time><div>Letter of congratulations<span class="sub">Maximum score in bachelor thesis</span></div></li>
+                    <li><time>2010</time><div>First place, IEEE Sumo Robots Contest<span class="sub">BETCON 2010, IEEE Section Bolivia</span></div></li>
+                </ul>
+                <dl class="skills">
+                    <dt>Machine learning</dt><dd>PyTorch, TensorFlow, NumPy, Pandas</dd>
+                    <dt>Languages</dt><dd>Python, C++, JavaScript, Scala, Java</dd>
+                    <dt>Infrastructure</dt><dd>Linux, Docker, Kubernetes, AWS, CI/CD, HPC</dd>
+                    <dt>Spoken</dt><dd>Spanish (native), English (proficient), German (basic)</dd>
+                </dl>
+            </div>
+        </section>
+
+        <section id="contact" class="reveal">
+            <div class="contact">
+                <h2>Let's talk</h2>
+                <p>I'm happy to discuss geometric deep learning, neuroimaging collaborations, or postdoc positions.</p>
+                <div class="email-line">
+                    <span id="email">rivas@cbs.mpg.de</span>
+                    <button class="copy" id="copyEmail">Copy</button>
+                </div>
+            </div>
+        </section>
+    </main>
+</div>
+
+<footer>
+    <span>&copy; <span id="year">2026</span> Ariel Iporre-Rivas</span>
+    <span>Augustusplatz 10, 04109 Leipzig</span>
+</footer>
+
+<script src="javascript/main.js"></script>
+<script src="javascript/hippo-benchmark.js"></script>
 </body>
 </html>
