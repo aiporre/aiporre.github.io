@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Learning on the shape of a problem · Ariel Iporre-Rivas</title>
+    <meta name="description" content="How a biomedical engineering thesis used geometric deep learning to segment connected lung vessels in CT images.">
+    <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+<main class="journal-page">
+    <a class="journal-back" href="../index.html#journal">&larr; Back to study journeys</a>
+    <article class="journal-article">
+        <p class="kicker">Study journey · Master's thesis, 2019</p>
+        <h1>Learning on the shape of a problem</h1>
+        <p class="dek">A lung-vessel segmentation project showed how the geometry of medical data can guide the design of a learning system.</p>
+        <div class="journal-prose">
+            <p>For my master's thesis in biomedical engineering at Heidelberg University, I worked on segmenting lung vessels in CT. The goal was to identify vessel structures in volumetric scans, where fine branches and connections matter to the anatomy being measured.</p>
+            <p>A regular image grid is a convenient representation, but it does not automatically encode the fact that vessels form a connected network. The thesis explored a geometric fully convolutional network that used this connected structure as part of the representation. In other words, the model was designed around a property of the anatomy instead of asking the network to infer every relationship from pixel coordinates alone.</p>
+            <h2>Representation is part of the method</h2>
+            <p>That distinction is central to geometric deep learning. Data can live on grids, graphs, surfaces or other structured spaces, and the choice affects which relationships are easy for a model to express. A graph representation makes adjacency explicit; a surface mesh carries local geometry and connectivity; a point cloud retains coordinates without a fixed grid.</p>
+            <p>The thesis evaluated the approach on VESSEL12 and reported state-of-the-art results for the task at the time. More lasting than any single score was the practical lesson: before selecting a network, make clear what the data's structure is and which parts of it the task depends on.</p>
+            <h2>A question that carried forward</h2>
+            <p>Later work on brain surfaces and hippocampal shape has continued this line of thinking. A vessel tree and a hippocampal mesh are different objects, but both make geometry relevant to the learning problem. The thesis gave me a first sustained opportunity to explore that connection in medical imaging.</p>
+            <p><a href="../index.html#education">See the thesis and its segmentation animation on the education page &rarr;</a></p>
+        </div>
+    </article>
+</main>
+</body>
+</html>

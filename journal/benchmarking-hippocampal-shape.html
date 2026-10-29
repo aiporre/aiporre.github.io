@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>What it takes to compare geometric networks · Ariel Iporre-Rivas</title>
+    <meta name="description" content="Notes on comparing geometric deep learning models for hippocampal shape analysis and connecting embeddings to individual differences.">
+    <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+<main class="journal-page">
+    <a class="journal-back" href="../index.html#journal">&larr; Back to study journeys</a>
+    <article class="journal-article">
+        <p class="kicker">Study journey · PhD research</p>
+        <h1>What it takes to compare geometric networks</h1>
+        <p class="dek">A model comparison becomes useful when architectures share a careful protocol and their learned representations are evaluated against meaningful questions.</p>
+        <div class="journal-prose">
+            <p>Hippocampal shape analysis sits at the intersection of geometry, machine learning and neuroscience. A hippocampus can be represented as a surface mesh, a graph, a point cloud or a volume. Each representation exposes different structure to a model, so comparing architectures means more than putting different names into a table.</p>
+            <p>Our ECML PKDD 2026 study assembled 12 geometric deep learning models across mesh, graph, point-cloud, multi-view, volumetric and spherical approaches. We evaluated them on a common ADNI cohort and compared their ability to retrieve similar shapes, classify diagnostic groups and learn metric embeddings. A shared evaluation protocol helps make differences in results interpretable as differences between approaches, rather than differences in data handling or tuning effort.</p>
+            <h2>From scores to representations</h2>
+            <p>Retrieval asks whether shapes with relevant similarities appear near one another in the learned space. Classification asks whether that space also supports diagnostic distinctions. These views are related but not interchangeable: a model that performs well on one measure need not lead on every other measure.</p>
+            <p>The study also examined whether normative models of embedding dimensions could capture individual variation. The aim is to connect learned shape representations with clinical and biological measures, including cognitive scores and Alzheimer's biomarkers. This adds a second layer to benchmarking: not only whether a model separates groups, but whether its representation can help describe variation between people.</p>
+            <h2>Why a benchmark is a starting point</h2>
+            <p>A comparative result is a map of the tested setting, not a universal ranking of architectures. Cohort composition, preprocessing, representation choices and evaluation metrics all shape what the benchmark can say. Making those choices explicit is part of making the work reusable.</p>
+            <p>The interactive overview and the paper are linked below. The benchmark repository contains the associated code.</p>
+            <p><a href="../index.html#hb">Explore the paper visualization &rarr;</a> &nbsp; <a href="https://doi.org/10.1007/978-3-032-37679-4_28">Read the paper &rarr;</a> &nbsp; <a href="https://github.com/aiporre/gdl-bsa">Browse the benchmark code &rarr;</a></p>
+        </div>
+    </article>
+</main>
+</body>
+</html>
