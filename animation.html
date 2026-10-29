@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Floating graph animation preview · Ariel Iporre-Rivas</title>
+    <meta name="description" content="Standalone preview of the animated floating graph nodes on this site.">
+    <link rel="icon" href="images/favico.ico">
+    <link rel="stylesheet" href="css/main.css">
+    <style>
+        body { min-height: 100vh; display: grid; place-items: center; padding: 24px; }
+        .preview { width: min(700px, 100%); }
+        .preview h1 { font-family: var(--serif); font-size: clamp(2rem, 6vw, 3.2rem); line-height: 1.1; margin: 0 0 10px; }
+        .preview > p:not(.kicker) { color: var(--muted); margin: 0 0 22px; }
+        .graph-frame { width: 100%; overflow: hidden; border: 1px solid var(--border); border-radius: 18px; box-shadow: var(--shadow); }
+        .graph-frame.profile-graph { margin: 0; }
+        .graph-frame svg { width: 100%; }
+        .back { display: inline-block; margin-top: 18px; }
+        @media (max-width: 560px) { body { padding: 16px; } }
+    </style>
+</head>
+<body>
+    <main class="preview">
+        <p class="kicker">Animation preview</p>
+        <h1>Floating graph nodes</h1>
+        <p>Nodes drift, fade near the edges, and form changing connections. Open the settings to adjust the graph.</p>
+        <article class="profile-graph graph-frame" aria-label="Animated floating graph nodes">
+            <svg role="img" aria-label="Floating graph nodes and their changing connections">
+                <defs>
+                    <linearGradient id="floating-graph-gradient" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="0" stop-color="#575E85"></stop>
+                        <stop offset="1" stop-color="#2E3145"></stop>
+                    </linearGradient>
+                </defs>
+                <rect width="100%" height="100%" fill="url(#floating-graph-gradient)"></rect>
+                <g></g>
+            </svg>
+            <details class="graph-settings">
+                <summary>Animation settings</summary>
+                <div class="graph-settings-grid">
+                    <label for="number-nodes">Nodes <input id="number-nodes" type="number" min="1" max="300" step="1" value="50"></label>
+                    <label for="extra-edges">Extra edges (%) <input id="extra-edges" type="number" min="0" max="1000" step="any" value="30"></label>
+                    <label for="network-style">Network style
+                        <select id="network-style">
+                            <option value="0">Mesh</option>
+                            <option value="0.5" selected>Balanced</option>
+                            <option value="1">Hub-and-spoke</option>
+                        </select>
+                    </label>
+                    <label for="drift-speed">Drift speed <input id="drift-speed" type="number" min="0" max="100" step="any" value="0.5"></label>
+                    <label for="repulsion-force">Repulsion <input id="repulsion-force" type="number" min="0" max="100" step="any" value="0.3"></label>
+                </div>
+            </details>
+        </article>
+        <a class="back" href="index.html">&larr; Back to Ariel’s website</a>
+    </main>
+    <script src="javascript/nayuki-animated-floating-graph-nodes.js"></script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+{
+  "private": true,
+  "scripts": {
+    "build:graph": "tsc -p tsconfig.json"
+  },
+  "devDependencies": {
+    "typescript": "5.8.3"
+  }
+}
