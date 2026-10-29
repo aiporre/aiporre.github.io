@@ -51,8 +51,38 @@
 
     <!-- ================= SIDEBAR ================= -->
     <aside class="profile">
-        <div class="avatar-wrap">
-            <img class="avatar" src="images/me.jpg" alt="Portrait of Ariel Iporre-Rivas">
+        <div class="profile-visual">
+            <div class="avatar-wrap">
+                <img class="avatar" src="images/me.jpg" alt="Portrait of Ariel Iporre-Rivas">
+            </div>
+            <article class="profile-graph" aria-label="Animated floating graph nodes">
+                <svg role="img" aria-label="Floating graph nodes and their changing connections">
+                    <defs>
+                        <linearGradient id="floating-graph-gradient" x1="0" y1="0" x2="0" y2="1">
+                            <stop offset="0" stop-color="#575E85"></stop>
+                            <stop offset="1" stop-color="#2E3145"></stop>
+                        </linearGradient>
+                    </defs>
+                    <rect width="100%" height="100%" fill="transparent"></rect>
+                    <g></g>
+                </svg>
+            </article>
+            <details class="graph-settings" hidden>
+                <summary>Animation settings</summary>
+                <div class="graph-settings-grid">
+                    <label for="number-nodes">Nodes <input id="number-nodes" type="number" min="1" max="300" step="1" value="50"></label>
+                    <label for="extra-edges">Extra edges (%) <input id="extra-edges" type="number" min="0" max="1000" step="any" value="30"></label>
+                    <label for="network-style">Network style
+                        <select id="network-style">
+                            <option value="0">Mesh</option>
+                            <option value="0.5" selected>Balanced</option>
+                            <option value="1">Hub-and-spoke</option>
+                        </select>
+                    </label>
+                    <label for="drift-speed">Drift speed <input id="drift-speed" type="number" min="0" max="100" step="any" value="0.5"></label>
+                    <label for="repulsion-force">Repulsion <input id="repulsion-force" type="number" min="0" max="100" step="any" value="0.3"></label>
+                </div>
+            </details>
         </div>
         <h1>Ariel Iporre&#8209;Rivas</h1>
         <p class="role">PhD Researcher &middot; Geometric Deep Learning</p>
@@ -399,5 +429,6 @@
 
 <script src="javascript/main.js"></script>
 <script src="javascript/hippo-benchmark.js"></script>
+<script src="javascript/nayuki-animated-floating-graph-nodes.js"></script>
 </body>
 </html>
