@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="GitHub contribution activity for Ariel Iporre-Rivas.">
+    <title>GitHub Activity · Ariel Iporre-Rivas</title>
+    <link rel="icon" href="images/logo.png">
+    <script>
+        try {
+            var theme = localStorage.getItem("theme");
+            if (theme) document.documentElement.setAttribute("data-theme", theme);
+        } catch (e) {}
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,500;6..72,600&display=swap">
+    <link rel="stylesheet" href="css/main.css">
+    <style>
+        body { min-height: 100vh; }
+        .activity-page { width: min(900px, calc(100% - 40px)); margin: 72px auto; }
+        .activity-page > p { color: var(--muted); }
+        .activity-blue-line { width: 88px; height: 3px; margin: -12px 0 26px; border-radius: 3px; background: #2f6fdb; box-shadow: 0 0 10px rgba(47,111,219,.55); animation: blue-line-blink 1.25s ease-in-out infinite; }
+        @keyframes blue-line-blink { 50% { opacity: .25; box-shadow: 0 0 2px rgba(47,111,219,.2); } }
+        @media (prefers-reduced-motion: reduce) { .activity-blue-line { animation: none; } }
+        .activity-card { --glare-x: 50%; --glare-y: 50%; padding: clamp(18px, 4vw, 32px); border: 1px solid var(--border); border-radius: var(--radius); background: radial-gradient(360px circle at var(--glare-x) var(--glare-y), rgba(47,111,219,.13), transparent 72%), var(--surface); box-shadow: var(--shadow); transition: background 120ms ease-out; }
+        @media (hover: none), (prefers-reduced-motion: reduce) { .activity-card { background: var(--surface); } }
+        .activity-range { margin: 0 0 14px; color: var(--muted); font-size: .9rem; }
+        .activity-summary { margin: 0 0 20px; font-size: 1.05rem; font-weight: 600; }
+        .grid-scroll { overflow: hidden; padding: 4px 0 12px; }
+        .activity-grid { display: grid; grid-auto-flow: column; grid-template-rows: repeat(7, minmax(0, 1fr)); grid-auto-columns: minmax(0, 1fr); gap: clamp(2px, .45vw, 5px); width: 100%; }
+        .activity-day { width: 100%; aspect-ratio: 1; border-radius: 3px; background: var(--surface-2); }
+        .activity-day[data-level="1"] { background: #9be9a8; }
+        .activity-day[data-level="2"] { background: #40c463; }
+        .activity-day[data-level="3"] { background: #30a14e; }
+        .activity-day[data-level="4"] { background: #216e39; }
+        :root[data-theme="dark"] .activity-day[data-level="1"] { background: #0e4429; }
+        :root[data-theme="dark"] .activity-day[data-level="2"] { background: #006d32; }
+        :root[data-theme="dark"] .activity-day[data-level="3"] { background: #26a641; }
+        :root[data-theme="dark"] .activity-day[data-level="4"] { background: #39d353; }
+        .activity-status { color: var(--muted); }
+        .activity-error { color: #b42318 !important; }
+        .profile-link { display: inline-block; margin-top: 18px; }
+        @media (max-width: 560px) { .activity-page { width: calc(100% - 28px); margin: 36px auto; } }
+    </style>
+</head>
+<body>
+    <main class="activity-page">
+        <a href="index.html">&larr; Back to portfolio</a>
+        <div class="section-head" style="margin-top: 24px"><span class="num">GitHub</span><h1 style="font-family:var(--serif);font-size:1.75rem;margin:0">Activity</h1></div>
+        <div class="activity-blue-line" aria-hidden="true"></div>
+        <p>A live contribution calendar for <strong>aiporre</strong>, fetched from the public GitHub contributions API.</p>
+        <section class="activity-card" aria-label="GitHub contribution activity">
+            <p class="activity-status" id="activity-status" role="status" aria-live="polite">Loading GitHub activity&hellip;</p>
+            <p class="activity-range" id="activity-range" hidden></p>
+            <p class="activity-summary" id="activity-summary" hidden></p>
+            <div class="grid-scroll" id="grid-scroll" hidden>
+                <div class="activity-grid" id="activity-grid" role="grid" aria-label="Daily GitHub contributions"></div>
+            </div>
+            <a class="profile-link" href="https://github.com/aiporre" target="_blank" rel="noopener noreferrer">View aiporre on GitHub &rarr;</a>
+        </section>
+    </main>
+    <script>
+        (function () {
+            var activityCard = document.querySelector(".activity-card");
+            if (window.matchMedia("(hover: hover) and (pointer: fine)").matches && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+                activityCard.addEventListener("pointermove", function (event) {
+                    var rect = activityCard.getBoundingClientRect();
+                    activityCard.style.setProperty("--glare-x", ((event.clientX - rect.left) / rect.width * 100) + "%");
+                    activityCard.style.setProperty("--glare-y", ((event.clientY - rect.top) / rect.height * 100) + "%");
+                });
+                activityCard.addEventListener("pointerleave", function () {
+                    activityCard.style.setProperty("--glare-x", "50%");
+                    activityCard.style.setProperty("--glare-y", "50%");
+                });
+            }
+            var status = document.getElementById("activity-status");
+            var endpoint = "https://github-contributions-api.jogruber.de/v4/aiporre";
+            fetch(endpoint, { headers: { Accept: "application/json" } })
+                .then(function (response) {
+                    if (!response.ok) throw new Error("The activity API returned HTTP " + response.status + ".");
+                    return response.json();
+                })
+                .then(function (data) {
+                    if (!Array.isArray(data.contributions)) throw new Error("The API response did not include contribution data.");
+                    var dates = new Map(data.contributions.map(function (day) { return [day.date, day]; }));
+                    var grid = document.getElementById("activity-grid");
+                    var dateFormat = new Intl.DateTimeFormat(undefined, { dateStyle: "medium", timeZone: "UTC" });
+                    var datesSorted = data.contributions.map(function (day) { return day.date; }).sort();
+                    if (!datesSorted.length) throw new Error("No contribution dates were returned.");
+                    var end = new Date();
+                    end = new Date(Date.UTC(end.getUTCFullYear(), end.getUTCMonth(), end.getUTCDate()));
+                    var dataStart = new Date(datesSorted[0] + "T00:00:00Z");
+                    var card = document.querySelector(".activity-card");
+                    function renderGrid() {
+                        grid.replaceChildren();
+                        var availableWidth = document.getElementById("grid-scroll").clientWidth || card.clientWidth;
+                        var cellGap = window.innerWidth <= 560 ? 3 : 4;
+                        var cellSize = window.innerWidth <= 560 ? 8 : 10;
+                        var weeksThatFit = Math.floor(availableWidth / (cellSize + cellGap));
+                        var weekCount = Math.max(52, weeksThatFit);
+                        var start = new Date(end);
+                        start.setUTCDate(start.getUTCDate() - weekCount * 7 + 1);
+                        if (start < dataStart) start = dataStart;
+                        var cursor = new Date(start);
+                        cursor.setUTCDate(cursor.getUTCDate() - cursor.getUTCDay());
+                        var periodTotal = 0;
+                        while (cursor <= end) {
+                            for (var weekday = 0; weekday < 7; weekday++) {
+                                var key = cursor.toISOString().slice(0, 10);
+                                var day = dates.get(key);
+                                var cell = document.createElement("span");
+                                var visible = cursor >= start && cursor <= end;
+                                cell.className = "activity-day";
+                                cell.dataset.level = day ? String(Math.max(0, Math.min(4, Number(day.level) || 0))) : "0";
+                                cell.setAttribute("role", "gridcell");
+                                if (visible) {
+                                    var count = day ? Number(day.count) || 0 : 0;
+                                    periodTotal += count;
+                                    var label = dateFormat.format(cursor);
+                                    cell.title = count + " contribution" + (count === 1 ? "" : "s") + " on " + label;
+                                    cell.setAttribute("aria-label", cell.title);
+                                } else {
+                                    cell.setAttribute("aria-hidden", "true");
+                                    cell.style.visibility = "hidden";
+                                }
+                                grid.appendChild(cell);
+                                cursor.setUTCDate(cursor.getUTCDate() + 1);
+                                if (cursor > end && weekday === 6) break;
+                            }
+                        }
+                        document.getElementById("activity-range").textContent = "Showing " + dateFormat.format(start) + " – " + dateFormat.format(end);
+                        document.getElementById("activity-summary").textContent = periodTotal.toLocaleString() + " contributions in this period";
+                    }
+                    renderGrid();
+                    window.addEventListener("resize", renderGrid);
+                    document.getElementById("activity-range").hidden = false;
+                    document.getElementById("activity-summary").hidden = false;
+                    document.getElementById("grid-scroll").hidden = false;
+                    status.hidden = true;
+                })
+                .catch(function (error) {
+                    status.textContent = "Could not load GitHub activity right now. " + error.message;
+                    status.classList.add("activity-error");
+                });
+        }());
+    </script>
+</body>
+</html>
